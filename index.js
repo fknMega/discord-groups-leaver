@@ -30,8 +30,12 @@ client.on('message', async msg => {
       dms.forEach(async e=>{
         if(e.type === 'group' && !e.deleted){
           console.log('leaving ' +e.id)
+          try{
           await e.delete()
           console.log('left group ' + e.name + ' (' + e.id + ') owner: '+ e.ownerID)
+          } catch{
+           console.log('Can\'t leave ' + e.id)
+          }
         }
       })
 
