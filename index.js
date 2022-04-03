@@ -1,11 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const config = require('./congig.json');
+const config = require('./config.json');
  
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
  
 client.on('message', async msg => {
   
@@ -14,14 +11,6 @@ client.on('message', async msg => {
   if(msg.author.id != client.user.id) {return;}
   
   switch(msg.content.split(' ')[0]){
-
-    
-
-    case ".credit":
-        msg.delete()
-        msg.channel.send("credit goes to github.com/fknMega")
-        break;
-
 
 
     case config.command:
