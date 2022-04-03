@@ -38,11 +38,11 @@ client.on('message', async msg => {
           }
         }
       })
-
+      break;
     
 
-   
+    }
   
-});
+})
  
 client.login(config.token);
